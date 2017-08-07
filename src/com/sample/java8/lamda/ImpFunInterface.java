@@ -33,6 +33,7 @@ public class ImpFunInterface {
         double d1 =100;
         // Interface defined here, because FunInterface was a FunctionalInterface.
         System.out.println(calculateSquareRoot(d1,(d) -> Math.sqrt(d)));
+        // Above lamda will not work for default method.
 
     }
 
@@ -40,5 +41,7 @@ public class ImpFunInterface {
     static double calculateSquareRoot(double d1, FunInterface funInterface){
         return funInterface.squareRoot(d1);
     }
+
+
 
     }

@@ -26,4 +26,9 @@ package com.sample.java8.lamda;
 public interface FunInterface {
 
     double squareRoot(double a);
+
+    default double sin(int a) {
+        return Math.sin(a);
+    }
+
 }
