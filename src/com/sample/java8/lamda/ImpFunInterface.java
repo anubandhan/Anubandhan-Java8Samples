@@ -25,8 +25,6 @@ package com.sample.java8.lamda;
 public class ImpFunInterface {
 
 
-
-
     public static void main (String[] arg) {
 
 
