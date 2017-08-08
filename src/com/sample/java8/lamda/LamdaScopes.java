@@ -31,17 +31,18 @@ public class LamdaScopes {
 
     // In constrast to local variables we have both read and write access to instance fields
     // and static variables from within lambda expressions.
-    static int outerStaticNum;
+    static Integer outerStaticNum;
     int outerNum;
 
 
     public static void main (String[] arg){
 
         // We can read final local variables from the outer scope of lambda expressions
-        final int num = 1;
+        Integer num = 1;
         Converter<Integer, String> stringConverter =
                 (from) -> String.valueOf(from + num);
-        System.out.println(stringConverter.convert(2));
+        System.out.println(stringConverter.convert(num));
+        // num=4; We can not assign value after lamda function.
 
 
         // But different to anonymous objects the variable num does not have to be declared final.
@@ -59,11 +60,19 @@ public class LamdaScopes {
         num2 = 3;
 */
 
+      new LamdaScopes().testScopes();
+
+
     }
 
-    void testScopes() {
+     void testScopes() {
         Converter<Integer, String> stringConverter1 = (from) -> {
             outerNum = 23;
+            return String.valueOf(outerNum);
+        };
+        outerNum=10;
+        Converter<Integer, String> stringConverter3 = (from) -> {
+            outerNum = 24;
             return String.valueOf(from);
         };
 
@@ -71,6 +80,10 @@ public class LamdaScopes {
             outerStaticNum = 72;
             return String.valueOf(from);
         };
+        outerStaticNum = 10;
+        System.out.println(stringConverter2.convert(outerStaticNum));
+        System.out.println(outerStaticNum);
+
     }
 
 }

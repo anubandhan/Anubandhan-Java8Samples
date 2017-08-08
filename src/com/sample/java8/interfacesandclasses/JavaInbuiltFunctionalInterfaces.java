@@ -61,6 +61,7 @@ public class JavaInbuiltFunctionalInterfaces {
         // Default methods can be used to chain multiple functions together (compose, andThen).
         // <Input, Return Type>
         Function<String, Integer> toInteger = Integer::valueOf;
+        
         Function<String, String> backToString = toInteger.andThen(String::valueOf);
 
         System.out.println(backToString.apply("123"));
@@ -77,6 +78,7 @@ public class JavaInbuiltFunctionalInterfaces {
         // Consumers
         // Consumers represents operations to be performed on a single input argument.
         // <Only Input>
+        // There are BiConsumer as well which consume 2 inputs.
         Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
         greeter.accept(new Person("Luke", "Skywalker"));
 

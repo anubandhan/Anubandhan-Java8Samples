@@ -68,8 +68,8 @@ public class ParallelStreams {
 
         t1 = System.nanoTime();
 
-        millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
-        System.out.println(String.format("parallel sort took: %d ms", 534));
+        millis  = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+        System.out.println(String.format("parallel sort took: %d ms", millis));
 
     }
 

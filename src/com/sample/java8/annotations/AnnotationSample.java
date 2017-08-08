@@ -1,4 +1,6 @@
-package com.sample.java8.lamda;
+package com.sample.java8.annotations;
+
+import java.lang.annotation.Repeatable;
 
 /**
  * The MIT License
@@ -22,23 +24,20 @@ package com.sample.java8.lamda;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-public class ImpFunInterface {
 
+@AnnotationSample.Hints({@AnnotationSample.Hint("hint1"), @AnnotationSample.Hint("hint2")})
+public class AnnotationSample {
+
+    @interface Hints {
+        Hint[] value();
+    }
+
+    @Repeatable(Hints.class)
+    @interface Hint {
+        String value();
+    }
 
     public static void main (String[] arg) {
 
-
-        double d1 =100;
-        // Interface defined here, because FunInterface was a FunctionalInterface.
-        System.out.println(calculateSquareRoot(d1,(d) -> Math.sqrt(d)));
-        // Above lamda will not work for default method.
-
     }
-
-    static double calculateSquareRoot(double d1, FunInterface funInterface){
-        return funInterface.squareRoot(d1);
-    }
-
-
-
-    }
+}

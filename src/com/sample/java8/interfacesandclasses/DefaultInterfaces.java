@@ -33,7 +33,7 @@ public class DefaultInterfaces {
     interface Formula {
         double calculate(int a);
 
-        default double sqrt(int a) {
+        default public double sqrt(int a) {
             return Math.sqrt(a);
         }
     }
@@ -47,6 +47,10 @@ public static void main (String[] arg){
         @Override
         public double calculate(int a) {
             return sqrt(a * 100);
+        }
+        @Override
+        public double sqrt(int a) {
+            return Math.abs(a);
         }
     };
     System.out.println(formula.calculate(100)); // 100.0

@@ -45,11 +45,12 @@ public class MethodAndConstructorReferences {
         String firstName;
         String lastName;
 
-        Person() {}
+        Person() {System.out.println("Empty Constructor");   }
 
         Person(String firstName, String lastName) {
             this.firstName = firstName;
             this.lastName = lastName;
+            System.out.println("Not empty Constructor");
         }
 
         @Override
@@ -60,7 +61,7 @@ public class MethodAndConstructorReferences {
     @FunctionalInterface
     interface PersonFactory<P extends Person> {
         P create(String firstName, String lastName); // :: Step 1
-       // P create(); //--> multiple overriding method not supported in FunctionalInterface. :: Step 2
+        //P create(); //--> multiple overriding method not supported in FunctionalInterface. :: Step 2
     }
 
     public static void main (String[] arg) {

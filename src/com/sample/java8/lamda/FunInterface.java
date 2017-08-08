@@ -22,7 +22,7 @@ package com.sample.java8.lamda;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
+@FunctionalInterface
 public interface FunInterface {
 
     double squareRoot(double a);
