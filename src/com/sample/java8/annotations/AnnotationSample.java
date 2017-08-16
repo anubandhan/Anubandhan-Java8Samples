@@ -30,6 +30,7 @@ public class AnnotationSample {
 
     @interface Hints {
         Hint[] value();
+    //test
     }
 
     @Repeatable(Hints.class)
