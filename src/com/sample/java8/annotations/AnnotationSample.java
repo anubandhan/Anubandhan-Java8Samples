@@ -38,6 +38,7 @@ public class AnnotationSample {
     @interface Hint {
         //test3
         String value();
+        //sample
     }
 
     public static void main (String[] arg) {
