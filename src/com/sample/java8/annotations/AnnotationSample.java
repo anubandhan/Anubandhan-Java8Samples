@@ -30,12 +30,15 @@ public class AnnotationSample {
 
     @interface Hints {
         Hint[] value();
+    //test
+        //test2
     }
 
     @Repeatable(Hints.class)
     @interface Hint {
         //test3
         String value();
+        //sample
     }
 
     public static void main (String[] arg) {
