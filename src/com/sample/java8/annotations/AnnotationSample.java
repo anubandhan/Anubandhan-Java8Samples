@@ -36,6 +36,7 @@ public class AnnotationSample {
 
     @Repeatable(Hints.class)
     @interface Hint {
+        //test3
         String value();
     }
 
